@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-devops-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-devops-app
+  template:
+    metadata:
+      labels:
+        app: python-devops-app
+    spec:
+      containers:
+      - name: python-app
+        image: 9397054542/indie-gems:tagname
+        ports:
+        - containerPort: 80
